@@ -24,7 +24,7 @@
   "scripts": {
     "dev": "NODE_ENV=development node_modules/.bin/webpack --mode=development --watch",
     "build": "NODE_ENV=production node_modules/.bin/webpack --mode=production",
-    "pretty": "node_modules/.bin/prettier --write src/**/*.{js,html,json}",
+    "prettier": "node_modules/.bin/prettier --write \"src/**/*.{js,html,json}\"",
     "zip": "zip -r extension.zip dist/"
   },
   "dependencies": {
