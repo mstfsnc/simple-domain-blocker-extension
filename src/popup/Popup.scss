@@ -1,0 +1,53 @@
+body {
+  padding: 0;
+  margin: 0;
+
+  .app {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 420px;
+
+      th,
+      td {
+        text-align: left;
+        vertical-align: middle;
+        height: 34px;
+        padding: 0 7px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #efefef;
+
+        &:not(:first-child) {
+          width: 0;
+        }
+
+        &:last-child {
+          text-align: center;
+        }
+      }
+
+      tbody {
+        tr {
+          &:hover:not(:first-child) {
+            background-color: #f8f8f8;
+          }
+
+          &:last-child {
+            border-bottom: 0;
+          }
+
+          &.passive {
+            td:first-child {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      .input {
+        width: 100%;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
