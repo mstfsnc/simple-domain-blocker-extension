@@ -32,16 +32,9 @@ chrome.storage.local.onChanged.addListener(async (changes) => {
 });
 chrome.runtime.onInstalled.addListener(function (details) {
   if (details.reason == "install") {
-    const defaultDomains = [
-      "insurads.com",
-      "engageya.com",
-      "doubleclick.net",
-      "adhouse.pro",
-      "criteo.com",
-      "google-analytics.com",
-    ];
+    const defaultDomains = ["doubleclick.net", "google-analytics.com"];
     chrome.storage.local.set({
-      domains: defaultDomains.map((item) => ({ domain: item, status: true })),
+      domains: defaultDomains.map((item) => ({ domain: item, status: false })),
     });
   }
 });
