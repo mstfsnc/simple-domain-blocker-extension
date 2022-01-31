@@ -1,6 +1,6 @@
 ## Simple domain blocker extension
 
-Block domain easly
+Helps you hide ads, avoid tracking, load pages faster
 
 ### Add to Chrome
 Link will be added soon

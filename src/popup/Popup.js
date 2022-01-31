@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Popup.scss";
 import Add from "./components/add";
 import Status from "./components/status";
@@ -8,6 +8,38 @@ import useStorage from "./hooks/useStorage";
 export default () => {
   const [input, setInput] = useState("");
   const [domains, setDomains] = useStorage("domains");
+
+  const netRequest = chrome.declarativeNetRequest;
+
+  useEffect(
+    async function () {
+      const removeRuleIds = await netRequest
+        .getDynamicRules()
+        .then(function (rules) {
+          return rules.map((r) => r.id);
+        });
+      netRequest.updateDynamicRules({
+        removeRuleIds,
+      });
+
+      const activeDomains = domains.filter((item) => item.status);
+      if (activeDomains.length) {
+        const addRules = activeDomains.map((item, index) => ({
+          id: index + 1,
+          condition: {
+            urlFilter: `||${item.domain}`,
+            resourceTypes: Object.values(netRequest.ResourceType),
+          },
+          action: { type: "block" },
+        }));
+
+        netRequest.updateDynamicRules({
+          addRules,
+        });
+      }
+    },
+    [domains]
+  );
 
   function addHandler() {
     const matched = input.match(
