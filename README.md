@@ -3,6 +3,7 @@
 Helps you hide ads, avoid tracking, load pages faster
 
 ### Add to Chrome
-Link will be added soon
+https://chrome.google.com/webstore/detail/simple-domain-blocker/ifkghkldggacclgeldiaboibpjcmjhkn
+
 
 ![Screenshot](https://github.com/mstfsnc/simple-domain-blocker-extension/blob/main/public/screenshot.png?raw=true)
