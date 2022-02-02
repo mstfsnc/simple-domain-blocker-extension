@@ -1,7 +1,7 @@
 {
   "name": "simple-domain-blocker",
-  "version": "0.0.2",
-  "description": "Simple domain blocker extension",
+  "version": "0.0.3",
+  "description": "Helps you hide ads, avoid tracking, load pages faster",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.12",
